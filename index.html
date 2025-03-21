@@ -3,39 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>আপনার নাম - পোর্টফোলিও</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Ratnajit Dhar - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Basic Reset & Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: #2c3e50;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(45deg, #3498db, #2c3e50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 4rem 2rem;
+            background: #f9f9f9;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Tech Stack Tags */
+        .tech-stack {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .tech-tag {
+            background: #3498db;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <!-- হেডার সেকশন -->
-    <header>
-        <h1>আপনার নাম</h1>
-        <p>ওয়েব ডেভেলপার | ডিজাইনার</p>
-    </header>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+        </ul>
+    </nav>
 
-    <!-- প্রজেক্টস সেকশন -->
-    <section id="projects">
-        <h2>প্রজেক্টস</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <img src="assets/images/project1.jpg" alt="প্রজেক্ট ১">
-                <h3>প্রজেক্ট ১</h3>
-                <p>প্রজেক্টের বিবরণ...</p>
-                <a href="#" class="btn">লাইভ ডেমো</a>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Ratnajit Dhar</h1>
+            <p>ML Engineer | Data Scientist | AI Researcher</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-kaggle"></i></a>
             </div>
-            <!-- আরো প্রজেক্ট কার্ড যোগ করুন -->
+            <a href="resume.pdf" class="btn">Download Resume</a>
         </div>
     </section>
 
-    <!-- কন্টাক্ট ফর্ম -->
-    <section id="contact">
-        <h2>যোগাযোগ</h2>
-        <form>
-            <input type="text" placeholder="নাম" required>
-            <input type="email" placeholder="ইমেইল" required>
-            <textarea placeholder="মেসেজ" required></textarea>
-            <button type="submit">পাঠান</button>
-        </form>
+    <!-- ML Projects Section -->
+    <section class="projects" id="projects">
+        <h2>Machine Learning Projects</h2>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h3>COVID-19 Prediction Model</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">LSTM</span>
+                </div>
+                <p>Developed a time-series prediction model using LSTM networks to forecast COVID-19 cases.</p>
+                <a href="#" class="btn">View Code</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h3>Image Classification with CNN</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">PyTorch</span>
+                    <span class="tech-tag">OpenCV</span>
+                    <span class="tech-tag">Transfer Learning</span>
+                </div>
+                <p>Built a custom CNN model achieving 98% accuracy on CIFAR-10 dataset.</p>
+                <a href="#" class="btn">Live Demo</a>
+            </div>
+        </div>
     </section>
+    <!-- Skills Section -->
+<section class="skills" id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+        <div class="skill-item">
+            <i class="fab fa-python"></i>
+            <h3>Python</h3>
+            <p>NumPy, Pandas, Scikit-learn</p>
+        </div>
+        <div class="skill-item">
+            <i class="fas fa-brain"></i>
+            <h3>Deep Learning</h3>
+            <p>TensorFlow, PyTorch, Keras</p>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications Section -->
+<section class="certifications" id="certifications">
+    <h2>Certifications</h2>
+    <div class="cert-grid">
+        <div class="cert-card">
+            <img src="coursera-logo.png" alt="Coursera">
+            <h3>Deep Learning Specialization</h3>
+            <p>DeepLearning.AI</p>
+        </div>
+    </div>
+</section>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Dynamic Project Loading (Add more projects here)
+        const projects = [
+            {
+                title: "Customer Churn Prediction",
+                tech: ["Scikit-learn", "XGBoost", "Pandas"],
+                description: "Developed ensemble model to predict customer churn with 92% accuracy."
+            }
+        ];
+    </script>
 </body>
 </html>
